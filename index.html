@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta name="google-site-verification" content="1O9GjvqJA_T9a0vonigQ4JOqtMgDWfWHzDHipNfdYAc" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Center Berja | Gimnasio y Entrenamiento en Berja</title>
+    <meta
+      name="description"
+      content="Ven a Fitness Center Berja, tu gimnasio de confianza en Almería. Musculación, cardio y el mejor ambiente para entrenar. ¡Visítanos!"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://lh3.googleusercontent.com/p/AF1QipPzrYkPBrjyGYy8MPq7TN3nZPew-d9vKNgpQ3r8=s680-w680-h510-rw"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/oswald@5.0.16/index.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Oswald', 'sans-serif'],
+            },
+            colors: {
+              mono: { 50: '#f9fafb', 900: '#111827', 950: '#030712' },
+            },
+            animation: {
+              'spin-slow': 'spin 12s linear infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      .hero-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), #000000);
+      }
+      .glass-card {
+        background: rgba(20, 20, 20, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s ease;
+      }
+      .glass-card:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(30, 30, 30, 0.6);
+        transform: translateY(-5px);
+      }
+      .btn-primary {
+        background-color: #ffffff;
+        color: #000000;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .btn-primary::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #d1d5db;
+        z-index: -2;
+      }
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #000000;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+      }
+      .btn-primary:hover::before {
+        width: 100%;
+      }
+      .btn-primary:hover {
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.5);
+      }
+      .btn-outline {
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        transition: all 0.4s ease;
+      }
+      .btn-outline:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      .image-reveal {
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+      .image-reveal.active {
+        clip-path: inset(0 0 0 0);
+      }
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ffffff, #6b7280);
+        z-index: 9998;
+        transition: width 0.1s ease-out;
+      }
+      .form-status {
+        display: none;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.875rem;
+        animation: slideDown 0.3s ease-out;
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .form-status.success {
+        display: block;
+        background-color: rgba(0, 255, 0, 0.1);
+        color: #00ff00;
+        border: 1px solid #00ff00;
+      }
+      .form-status.error {
+        display: block;
+        background-color: rgba(255, 0, 0, 0.1);
+        color: #ff0000;
+        border: 1px solid #ff0000;
+      }
+      .form-loading {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      @media (max-width: 768px) {
+        .glass-card {
+          padding: 1.5rem;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
+        .btn-primary,
+        .btn-outline {
+          min-width: 100%;
+          text-align: center;
+        }
+        #contactForm {
+          padding: 1.5rem;
+        }
+        .form-status {
+          font-size: 0.75rem;
+          padding: 0.75rem;
+        }
+        input,
+        select,
+        textarea {
+          font-size: 16px;
+        }
+        input,
+        select,
+        textarea,
+        button {
+          min-height: 48px;
+        }
+        .grid.md\:grid-cols-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-white selection:text-black">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div
+            class="flex-shrink-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <a
+              href="#"
+              class="text-2xl font-display font-bold tracking-widest text-white uppercase"
+              >Alberto<span class="text-gray-600">Cabrera</span></a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#inicio"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Inicio</a
+              >
+              <a
+                href="#sobre-mi"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Sobre Mí</a
+              >
+              <a
+                href="#tarifas"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Tarifas</a
+              >
+              <a
+                href="#gimnasio"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Instalaciones</a
+              >
+              <a
+                href="#resenas"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Reseñas</a
+              >
+              <a
+                href="#contacto"
+                class="btn-primary px-6 py-2 text-sm font-bold uppercase tracking-wider"
+                >Empezar</a
+              >
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              onclick="toggleMenu()"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none"
+            >
+              <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:hidden hidden bg-black border-b border-white/10 absolute w-full"
+        id="mobile-menu"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#inicio"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Inicio</a
+          >
+          <a
+            href="#sobre-mi"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Sobre Mí</a
+          >
+          <a
+            href="#tarifas"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Tarifas</a
+          >
+          <a
+            href="#gimnasio"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Instalaciones</a
+          >
+          <a
+            href="#resenas"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Reseñas</a
+          >
+          <a
+            href="#contacto"
+            class="text-white font-bold block px-3 py-2 rounded-md text-base uppercase"
+            >Empezar</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772743961/all_dptiwu.jpg"
+          data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+          alt="Alberto Cabrera Training"
+          class="w-full h-full object-cover grayscale contrast-125 brightness-50 scale-105 animate-pulse-slow"
+          loading="eager"
+          decoding="async"
+          onerror="handleImgError(this)"
+        />
+        <div class="absolute inset-0 hero-overlay"></div>
+      </div>
+      <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+          <p
+            class="text-gray-400 font-mono text-xs md:text-sm mb-6 tracking-[0.3em] uppercase border-b border-white/20 inline-block pb-2"
+          >
+            Fitness Center Berja
+          </p>
+        </div>
+        <h1
+          class="text-5xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter text-white mb-8 uppercase leading-none"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+          data-aos-delay="400"
+        >
+          Sin Excusas.<br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-600"
+            >Solo Resultados.</span
+          >
+        </h1>
+        <p
+          class="mt-4 text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto font-light"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="600"
+        >
+          Entrenamiento de alto rendimiento y transformación física en Berja.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="800"
+        >
+          <a
+            href="#contacto"
+            class="btn-primary px-10 py-4 text-base font-bold uppercase tracking-widest min-w-[200px]"
+            >Empezar Ahora</a
+          >
+          <a
+            href="#tarifas"
+            class="btn-outline px-10 py-4 text-base font-bold uppercase tracking-widest min-w-[200px]"
+            >Ver Planes</a
+          >
+        </div>
+      </div>
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500"
+      >
+        <i data-lucide="chevron-down" class="w-8 h-8"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-24 bg-black relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 text-[20vw] font-display font-bold text-white/5 leading-none select-none pointer-events-none -translate-y-1/4 translate-x-1/4"
+      >
+        AC
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+          <div
+            class="relative mb-16 lg:mb-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <div class="grid grid-cols-1 gap-6">
+              <div class="relative group">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-gray-700 to-black rounded-sm blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+                ></div>
+                <img
+                  src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772744248/dsef_ddui1w.jpg"
+                  data-fallback="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+                  alt="Alberto Cabrera Portrait"
+                  class="relative rounded-sm shadow-2xl grayscale contrast-125 w-full h-[600px] object-cover object-top border border-white/10 image-reveal"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="handleImgError(this)"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <h2
+              class="text-white font-display font-bold tracking-widest uppercase text-4xl mb-8 border-l-4 border-white pl-6"
+            >
+              Alberto Cabrera
+            </h2>
+            <p class="text-gray-400 text-lg mb-6 leading-relaxed font-light">
+              Más que un entrenador, soy tu socio en este proceso. Mi filosofía
+              se basa en la disciplina, la constancia y la ciencia aplicada al
+              movimiento.
+            </p>
+            <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
+              Como fundador de
+              <strong class="text-white">Fitness Center Berja</strong>, he
+              creado un entorno donde el enfoque es único: tú. Olvida las
+              distracciones, aquí venimos a trabajar.
+            </p>
+            <div
+              class="grid grid-cols-2 gap-8 mb-10 border-t border-b border-white/10 py-8"
+            >
+              <div class="group">
+                <h4
+                  class="text-4xl font-display font-bold text-white group-hover:text-gray-300 transition-colors"
+                >
+                  <span class="counter" data-target="100">0</span>%
+                </h4>
+                <p class="text-gray-500 text-xs uppercase tracking-wider mt-2">
+                  Compromiso Total
+                </p>
+              </div>
+              <div class="group">
+                <h4
+                  class="text-4xl font-display font-bold text-white group-hover:text-gray-300 transition-colors"
+                >
+                  <span class="counter" data-target="24">0</span>/<span
+                    class="counter"
+                    data-target="7"
+                    >0</span
+                  >
+                </h4>
+                <p class="text-gray-500 text-xs uppercase tracking-wider mt-2">
+                  Soporte Continuo
+                </p>
+              </div>
+            </div>
+
+            <!-- Dos fotos en cuadrícula: Entrenamiento + Medallas -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div
+                class="relative overflow-hidden rounded-sm border border-white/10"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <img
+                  src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772743970/al_avz1h2.jpg"
+                  data-fallback="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
+                  alt="Training Session"
+                  class="w-full h-48 object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="handleImgError(this)"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+                ></div>
+                <div class="absolute bottom-3 left-3">
+                  <p
+                    class="text-white font-bold uppercase tracking-widest text-xs"
+                  >
+                    Entrenamiento Real
+                  </p>
+                </div>
+              </div>
+              <div
+                class="relative overflow-hidden rounded-sm border border-white/10"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <img
+                  src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745095/IMG_0588_z34rs3.jpg"
+                  alt="Medallas Alberto Cabrera IFBB"
+                  class="w-full h-48 object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.opacity='0'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
+                ></div>
+                <div class="absolute bottom-3 left-3">
+                  <p
+                    class="text-white font-bold uppercase tracking-widest text-xs"
+                  >
+                    Atleta IFBB
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#contacto"
+              class="text-white font-bold uppercase tracking-widest hover:text-gray-400 transition-colors flex items-center gap-3 group"
+            >
+              Habla conmigo
+              <i
+                data-lucide="arrow-right"
+                class="w-5 h-5 group-hover:translate-x-2 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transformations Subsection -->
+    <div
+      id="transformaciones"
+      class="py-20 bg-neutral-950 border-t border-white/5"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <p
+            class="text-gray-500 font-mono text-xs tracking-[0.3em] uppercase mb-3"
+          >
+            Resultados Reales
+          </p>
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold text-white uppercase tracking-tight"
+          >
+            Transformaciones
+          </h2>
+          <div class="w-16 h-px bg-white mx-auto mt-5"></div>
+        </div>
+
+        <!-- Initial 4 photos -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745237/cammm_umdlfo.png"
+              alt="Transformación 1"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745249/cammmmmmmm_adklnj.png"
+              alt="Transformación 2"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745131/cam_oo9470.png"
+              alt="Transformación 3"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745235/aa_zrtsnu.png"
+              alt="Transformación 4"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Extra photos (hidden by default) -->
+        <div
+          id="extra-transformaciones"
+          class="hidden mt-3 md:mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+        >
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745237/calalal_z7me8s.png"
+              alt="Transformación 5"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745236/cammamamamama_jkmotz.png"
+              alt="Transformación 6"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745237/camm_kec1e4.png"
+              alt="Transformación 7"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+          <div
+            class="relative overflow-hidden border border-white/10 rounded-sm"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745249/cammmm_v5m2gv.png"
+              alt="Transformación 8"
+              class="w-full h-56 sm:h-64 md:h-80 object-cover object-center transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Ver más button -->
+        <div class="mt-10 text-center">
+          <button
+            onclick="toggleTransformaciones()"
+            id="btn-ver-mas"
+            class="border border-white/30 text-white px-10 py-3 uppercase text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-colors"
+          >
+            Ver Más
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleTransformaciones() {
+        const extra = document.getElementById('extra-transformaciones');
+        const btn = document.getElementById('btn-ver-mas');
+        if (extra.classList.contains('hidden')) {
+          extra.classList.remove('hidden');
+          extra.classList.add('grid');
+          btn.textContent = 'Ver Menos';
+          extra.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          extra.classList.add('hidden');
+          extra.classList.remove('grid');
+          btn.textContent = 'Ver Más';
+        }
+      }
+    </script>
+
+    <!-- Pricing Section -->
+    <section id="tarifas" class="py-24 bg-neutral-950 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase tracking-tight"
+          >
+            Planes y Tarifas
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            Sin matrículas. Sin permanencia. Sin trampas.
+          </p>
+          <div class="w-24 h-1 bg-white mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="glass-card p-8 rounded-sm relative group"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div
+              class="absolute top-0 right-0 bg-white text-black text-xs font-bold px-3 py-1 uppercase"
+            >
+              Popular
+            </div>
+            <h3
+              class="text-2xl font-display font-bold text-white mb-2 uppercase"
+            >
+              Cuota Mensual
+            </h3>
+            <div class="text-4xl font-bold text-white mb-6">
+              <span class="counter" data-target="35">0</span>€<span
+                class="text-sm text-gray-500 font-normal"
+                >/mes</span
+              >
+            </div>
+            <ul
+              class="space-y-4 text-gray-400 text-sm mb-8 border-t border-white/10 pt-6"
+            >
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Acceso
+                ilimitado al gimnasio
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Zona de
+                musculación y cardio
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                Vestuarios y duchas
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Sin
+                permanencia
+              </li>
+            </ul>
+            <a
+              href="#contacto"
+              class="block w-full text-center border border-white/30 text-white py-3 uppercase text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-colors"
+              >Elegir Plan</a
+            >
+          </div>
+          <div
+            class="glass-card p-8 rounded-sm relative group border-white/20 bg-neutral-900"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="absolute top-0 right-0 bg-gray-800 text-white text-xs font-bold px-3 py-1 uppercase"
+            >
+              Ahorro
+            </div>
+            <h3
+              class="text-2xl font-display font-bold text-white mb-2 uppercase"
+            >
+              Bono 3 Meses
+            </h3>
+            <div class="text-4xl font-bold text-white mb-6">
+              <span class="counter" data-target="90">0</span>€<span
+                class="text-sm text-gray-500 font-normal"
+                >/total</span
+              >
+            </div>
+            <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">
+              Equivalente a <span class="counter" data-target="30">0</span>€/mes
+            </p>
+            <ul
+              class="space-y-4 text-gray-400 text-sm mb-8 border-t border-white/10 pt-6"
+            >
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Todo lo
+                incluido en Mensual
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Precio
+                reducido
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                Compromiso trimestral
+              </li>
+            </ul>
+            <a
+              href="#contacto"
+              class="block w-full text-center border border-white/30 text-white py-3 uppercase text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-colors"
+              >Elegir Plan</a
+            >
+          </div>
+          <div
+            class="glass-card p-8 rounded-sm relative group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3
+              class="text-2xl font-display font-bold text-white mb-2 uppercase"
+            >
+              Cuota ÉLITE
+            </h3>
+            <div class="text-4xl font-bold text-white mb-6">
+              <span class="counter" data-target="100">0</span>€<span
+                class="text-sm text-gray-500 font-normal"
+                >/mes</span
+              >
+            </div>
+            <ul
+              class="space-y-4 text-gray-400 text-sm mb-8 border-t border-white/10 pt-6"
+            >
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                <strong>Dieta personalizada</strong>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                <strong>Asesoramiento continuo</strong>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                <strong>1 Entreno personal mensual</strong>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-white"></i> Acceso
+                total gimnasio
+              </li>
+            </ul>
+            <a
+              href="#contacto"
+              class="block w-full text-center bg-white text-black py-3 uppercase text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors"
+              >Elegir Plan</a
+            >
+          </div>
+        </div>
+        <div
+          class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div
+            class="bg-neutral-900 p-6 border border-white/5 hover:border-white/20 transition-colors"
+          >
+            <h4 class="text-white font-bold uppercase mb-1">Cuota PRO</h4>
+            <p class="text-gray-500 text-xs mb-2">Con dieta y asesoramiento</p>
+            <p class="text-2xl font-display font-bold text-white">
+              <span class="counter" data-target="55">0</span>€<span
+                class="text-sm text-gray-600"
+                >/mes*</span
+              >
+            </p>
+          </div>
+          <div
+            class="bg-neutral-900 p-6 border border-white/5 hover:border-white/20 transition-colors"
+          >
+            <h4 class="text-white font-bold uppercase mb-1">Tarifa 1 Día</h4>
+            <p class="text-gray-500 text-xs mb-2">Acceso diario</p>
+            <p class="text-2xl font-display font-bold text-white">
+              <span class="counter" data-target="5">0</span>€
+            </p>
+          </div>
+          <div
+            class="bg-neutral-900 p-6 border border-white/5 hover:border-white/20 transition-colors"
+          >
+            <h4 class="text-white font-bold uppercase mb-1">Bono 10 Días</h4>
+            <p class="text-gray-500 text-xs mb-2">Entradas sueltas</p>
+            <p class="text-2xl font-display font-bold text-white">
+              <span class="counter" data-target="40">0</span>€
+            </p>
+          </div>
+          <div
+            class="bg-neutral-900 p-6 border border-white/5 hover:border-white/20 transition-colors flex items-center justify-center text-center"
+          >
+            <p class="text-gray-400 text-sm">
+              Preparador y atleta IFBB:<br /><span class="text-white"
+                >Alberto Cabrera</span
+              >
+            </p>
+          </div>
+        </div>
+        <p class="text-center text-gray-600 text-xs mt-4">
+          *Precio estimado mensual para cuota PRO
+        </p>
+      </div>
+    </section>
+
+    <!-- Gym Section -->
+    <section id="gimnasio" class="py-24 bg-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <p
+            class="text-gray-500 font-mono text-xs tracking-[0.3em] uppercase mb-3"
+          >
+            Berja, Almería
+          </p>
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight"
+          >
+            Nuestras Instalaciones
+          </h2>
+          <div class="w-24 h-1 bg-white mx-auto mt-6"></div>
+        </div>
+
+        <!-- Main block: info + big photo -->
+        <div
+          class="grid lg:grid-cols-2 gap-0 border border-white/10 shadow-2xl mb-8"
+          data-aos="fade-up"
+        >
+          <!-- Info panel - shows below photo on mobile, left on desktop -->
+          <div
+            class="p-8 md:p-12 flex flex-col justify-between bg-neutral-900 relative overflow-hidden order-2 lg:order-1"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white to-transparent"
+            ></div>
+
+            <div>
+              <h3
+                class="text-2xl md:text-3xl font-display font-bold text-white mb-4 uppercase tracking-tighter"
+              >
+                Fitness Center Berja
+              </h3>
+              <p class="text-gray-400 font-light leading-relaxed mb-8">
+                Un espacio diseñado para el rendimiento. Equipamiento de gama
+                alta, ambiente serio y la motivación que necesitas para superar
+                tus límites.
+              </p>
+
+              <!-- Address -->
+              <div
+                class="flex items-start gap-3 mb-5 p-4 bg-white/5 border border-white/10"
+              >
+                <i
+                  data-lucide="map-pin"
+                  class="w-4 h-4 text-white flex-shrink-0 mt-0.5"
+                ></i>
+                <div>
+                  <p
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-1"
+                  >
+                    Dirección
+                  </p>
+                  <p class="text-gray-300 text-sm">
+                    Calle Dr. Caba, 3 — 04760 Berja, Almería
+                  </p>
+                </div>
+              </div>
+
+              <!-- Schedule — clean table layout, works on all screen sizes -->
+              <div
+                class="mb-8 bg-white/5 border border-white/10 overflow-hidden"
+              >
+                <div
+                  class="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/5"
+                >
+                  <i
+                    data-lucide="clock"
+                    class="w-4 h-4 text-white flex-shrink-0"
+                  ></i>
+                  <p
+                    class="text-white font-bold uppercase tracking-widest text-xs"
+                  >
+                    Horario
+                  </p>
+                </div>
+                <div class="divide-y divide-white/5">
+                  <div class="flex items-center justify-between px-4 py-3">
+                    <span
+                      class="text-gray-400 text-xs uppercase tracking-wide font-medium"
+                      >Lun — Vie</span
+                    >
+                    <span class="text-white font-semibold text-sm tabular-nums"
+                      >6:30 — 22:30</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between px-4 py-3">
+                    <span
+                      class="text-gray-400 text-xs uppercase tracking-wide font-medium"
+                      >Sábado</span
+                    >
+                    <span class="text-white font-semibold text-sm tabular-nums"
+                      >10:00 — 19:00</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between px-4 py-3">
+                    <span
+                      class="text-gray-400 text-xs uppercase tracking-wide font-medium"
+                      >Domingo</span
+                    >
+                    <span class="text-white font-semibold text-sm tabular-nums"
+                      >9:00 — 13:00</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Features grid -->
+              <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
+                <div class="flex items-center gap-2 text-gray-300 text-sm">
+                  <i
+                    data-lucide="check"
+                    class="w-3.5 h-3.5 text-white flex-shrink-0"
+                  ></i>
+                  <span>Zona musculación</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 text-sm">
+                  <i
+                    data-lucide="check"
+                    class="w-3.5 h-3.5 text-white flex-shrink-0"
+                  ></i>
+                  <span>Área de cardio</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 text-sm">
+                  <i
+                    data-lucide="check"
+                    class="w-3.5 h-3.5 text-white flex-shrink-0"
+                  ></i>
+                  <span>Zona de piernas</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 text-sm">
+                  <i
+                    data-lucide="check"
+                    class="w-3.5 h-3.5 text-white flex-shrink-0"
+                  ></i>
+                  <span>Vestuarios y duchas</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 text-gray-300 text-sm col-span-2"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-3.5 h-3.5 text-white flex-shrink-0"
+                  ></i>
+                  <span>Venta de suplementos</span>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/place/Calle+Dr.+Caba,+3,+04760+Berja,+Almer%C3%ADa/@36.8475111,-2.9449874,345m/data=!3m1!1e3!4m6!3m5!1s0xd7048a37e460afd:0xf624d52fb26c266e!8m2!3d36.8475849!4d-2.9453961!16s%2Fg%2F11c22w8_gg?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="inline-flex items-center gap-3 border-b border-white pb-1 text-white font-display uppercase tracking-widest text-sm hover:text-gray-400 hover:border-gray-400 transition-colors w-fit group"
+            >
+              Cómo llegar
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Main photo — shows above on mobile, right on desktop -->
+          <div
+            class="relative h-72 sm:h-96 lg:h-auto bg-neutral-800 group overflow-hidden order-1 lg:order-2 min-h-[300px]"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772743947/gioiii_lvjwgv.jpg"
+              data-fallback="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+              alt="Gym Exterior"
+              class="w-full h-full object-cover contrast-125 group-hover:scale-105 transition-transform duration-1000"
+              loading="lazy"
+              decoding="async"
+              onerror="handleImgError(this)"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-l"
+            ></div>
+            <div class="absolute bottom-4 left-4">
+              <span
+                class="text-white font-display uppercase tracking-widest text-xs border border-white/40 px-3 py-1 bg-black/30 backdrop-blur-sm"
+                >Fitness Center Berja</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Three bottom gallery photos -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
+        >
+          <div
+            class="relative group overflow-hidden border border-white/10"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772743947/giii_umxcdr.jpg"
+              data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+              alt="Gym Interior"
+              class="w-full h-56 sm:h-60 md:h-72 object-cover contrast-125 transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="handleImgError(this)"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-4 left-4">
+              <span
+                class="text-white font-display uppercase tracking-widest text-xs"
+                >Sala principal</span
+              >
+            </div>
+          </div>
+          <div
+            class="relative group overflow-hidden border border-white/10"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772743947/gi_bo7l6f.jpg"
+              data-fallback="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80"
+              alt="Training Atmosphere"
+              class="w-full h-56 sm:h-60 md:h-72 object-cover contrast-125 transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="handleImgError(this)"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-4 left-4">
+              <span
+                class="text-white font-display uppercase tracking-widest text-xs"
+                >Zona de piernas</span
+              >
+            </div>
+          </div>
+          <div
+            class="relative group overflow-hidden border border-white/10 sm:col-span-2 lg:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://res.cloudinary.com/dvo82wjih/image/upload/v1772745097/IMG_0590_m35cw4.jpg"
+              alt="Zona de Cardio"
+              class="w-full h-56 sm:h-60 md:h-72 object-cover contrast-125 transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.opacity='0'"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-4 left-4">
+              <span
+                class="text-white font-display uppercase tracking-widest text-xs"
+                >Zona de Cardio</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="resenas" class="py-24 bg-neutral-950 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div
+            class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-6"
+          >
+            <div class="flex text-yellow-500">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <span class="text-white font-bold text-sm">5.0 en Google</span>
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase tracking-tight"
+          >
+            Lo Que Dicen Nuestros Clientes
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            Más de 50 valoraciones de personas que ya han transformado su vida
+            con nosotros.
+          </p>
+          <div class="w-24 h-1 bg-white mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold"
+              >
+                J
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Juminda 129</h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 6 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "Tras casi un mes en este gimnasio, me atrevo a decir que nunca
+              habría tenido tanta facilidad para entrenar mi cuerpo como se
+              merece, la cantidad y calidad de las máquinas es espectacular..."
+            </p>
+          </div>
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center text-white font-bold"
+              >
+                F
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">
+                  Francisco Fernandez
+                </h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 5 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "Excelente gimnasio, máquinas de calidad con buen ambiente y
+              climatización. Entrenador muy bueno que sabe de lo que habla y
+              disponible en cualquier momento que necesites. Muy recomendable."
+            </p>
+          </div>
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold"
+              >
+                J
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Juanjo Mas Medrano</h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 7 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "El gimnasio es increíble, limpieza, gente de calidad, nada de
+              olores. Ya era hora de que el pueblo tuviese un centro en
+              condiciones. Con un entrenador en forma y con conocimientos."
+            </p>
+          </div>
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-teal-700 flex items-center justify-center text-white font-bold"
+              >
+                A
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Alba Martinez</h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 6 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "Gimnasio de diez. Con Alberto, un monitor que nunca defrauda y
+              siempre está dispuesto a ayudar. Desde hace un mes es mi
+              entrenador tanto en alimentación como en entrenamiento."
+            </p>
+          </div>
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-purple-700 flex items-center justify-center text-white font-bold"
+              >
+                S
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Susi Padilla</h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 6 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "El gimnasio es espectacular, muy limpio, tiene muy buenas
+              máquinas. Alberto el entrenador es maravilloso, agradable,
+              simpático y muy atento a ti y a todo el mundo. En total todo un
+              10."
+            </p>
+          </div>
+          <div
+            class="glass-card p-6 rounded-sm"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-orange-700 flex items-center justify-center text-white font-bold"
+              >
+                M
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-sm">Manuel Cazorla</h4>
+                <div class="flex text-yellow-500 text-xs">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i
+                  ><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+              <span class="text-gray-600 text-xs ml-auto">Hace 7 meses</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              "Lugar perfecto para quienes quieren entrenar agusto y pasarlo
+              bien, con buenas máquinas, buena música y muy bien sistema de aire
+              acondicionado, cosa que se agradece mucho."
+            </p>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a
+            href="https://www.google.com/search?sa=X&sca_esv=bf3d4068b2084840&sxsrf=ANbL-n75wJ1jMB3pFEUvFWfd3wESooJp4g:1772275060711&q=opiniones%20de%20fitness%20center%20berja&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2MTE0N7CwtLQwNzE0MzAxMbAw3sDI-IpRMb8gMy8zPy-1WCElVSEtswTIKlZITs0rSS1SSEotykpcxEpYDQCB1ZSxYgAAAA&rldimm=4417089987416044083&tbm=lcl&hl=es-ES&ved=0CAcQ5foLahcKEwjI_OSL__uSAxUAAAAAHQAAAAAQBg&biw=1920&bih=945&dpr=1#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT25wb1ZsbGpNV3RKYURaWWRVZFdWRFl3UkVWeFkzYxAB"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm uppercase tracking-widest border-b border-transparent hover:border-white pb-1"
+          >
+            Ver todas las reseñas en Google
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contacto"
+      class="py-24 bg-neutral-950 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 w-64 h-64 bg-white/5 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 blur-3xl rounded-full translate-x-1/3 translate-y-1/3"
+      ></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-display font-bold text-white mb-4 uppercase">
+            Únete al Equipo
+          </h2>
+          <p class="text-gray-500">
+            La transformación comienza con una decisión.
+          </p>
+        </div>
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/mojkably"
+          method="POST"
+          class="space-y-6 bg-black p-6 md:p-12 border border-white/10 shadow-2xl relative"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i data-lucide="mail" class="w-24 h-24 text-white"></i>
+          </div>
+          <div id="formSuccess" class="form-status">
+            ✓ ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo
+            pronto.
+          </div>
+          <div id="formError" class="form-status">
+            ✕ Hubo un error al enviar. Por favor, inténtalo de nuevo.
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="group">
+              <label
+                for="name"
+                class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-white transition-colors"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full bg-transparent border-b border-gray-800 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-gray-800"
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div class="group">
+              <label
+                for="email"
+                class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-white transition-colors"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full bg-transparent border-b border-gray-800 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-gray-800"
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+          <div class="group">
+            <label
+              for="goal"
+              class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-white transition-colors"
+              >Objetivo</label
+            >
+            <select
+              id="goal"
+              name="goal"
+              class="w-full bg-transparent border-b border-gray-800 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors [&>option]:bg-black"
+            >
+              <option class="text-gray-500">Selecciona una opción</option>
+              <option>Perder Peso</option>
+              <option>Ganar Músculo</option>
+              <option>Mejorar Salud</option>
+              <option>Preparación Competición</option>
+            </select>
+          </div>
+          <div class="group">
+            <label
+              for="plan"
+              class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-white transition-colors"
+              >Plan</label
+            >
+            <select
+              id="plan"
+              name="plan"
+              class="w-full bg-transparent border-b border-gray-800 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors [&>option]:bg-black"
+            >
+              <option class="text-gray-500">Selecciona un plan</option>
+              <option>Por ahora ningun plan</option>
+              <option>Cuota mensual</option>
+              <option>Bono 3 meses</option>
+              <option>Cuota pro</option>
+              <option>Cuota élite</option>
+            </select>
+          </div>
+          <div class="group">
+            <label
+              for="message"
+              class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-white transition-colors"
+              >Mensaje</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              required
+              class="w-full bg-transparent border-b border-gray-800 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-gray-800"
+              placeholder="Cuéntame tus objetivos..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            id="submitBtn"
+            class="w-full bg-white text-black font-display font-bold py-4 uppercase tracking-[0.2em] hover:bg-gray-200 transition-all mt-8 relative overflow-hidden group"
+          >
+            <span class="relative z-10">Enviar Solicitud</span>
+            <div
+              class="absolute inset-0 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+            ></div>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="text-center md:text-left">
+            <h3
+              class="text-xl font-display font-bold text-white tracking-widest uppercase"
+            >
+              Alberto Cabrera
+            </h3>
+            <p class="text-gray-600 text-xs mt-2 uppercase tracking-wider">
+              Fitness Center Berja © 2026
+            </p>
+            <div
+              class="mt-4 flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm"
+            >
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              <span>Calle Dr. Caba, 3, 04760 Berja, Almería</span>
+            </div>
+          </div>
+          <div class="flex justify-center md:justify-end space-x-8">
+            <a
+              href="https://www.instagram.com/fitnesscenterberja/"
+              target="_blank"
+              class="text-gray-500 hover:text-white transition-colors transform hover:scale-110 flex items-center gap-2"
+            >
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+              <span class="text-sm uppercase tracking-wide">Instagram</span>
+            </a>
+            <a
+              href="https://www.facebook.com/alberto.cabreragonzalez.7/"
+              target="_blank"
+              class="text-gray-500 hover:text-white transition-colors transform hover:scale-110 flex items-center gap-2"
+            >
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+              <span class="text-sm uppercase tracking-wide">Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      function handleImgError(img) {
+        const fallback = img.getAttribute('data-fallback');
+        if (fallback && img.src !== fallback) {
+          img.src = fallback;
+        } else {
+          img.style.opacity = '0';
+        }
+      }
+
+      function retryFailedImages() {
+        document.querySelectorAll('img').forEach((img) => {
+          if (!img.complete || img.naturalWidth === 0) {
+            const currentSrc = img.src;
+            img.src = '';
+            img.src = currentSrc;
+          }
+        });
+      }
+
+      lucide.createIcons();
+
+      AOS.init({
+        once: true,
+        offset: 100,
+        duration: 800,
+        easing: 'ease-out-cubic',
+      });
+
+      window.addEventListener('scroll', () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scrollProgress').style.width = scrolled + '%';
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('bg-black/90');
+          navbar.classList.remove('bg-black/80');
+        } else {
+          navbar.classList.remove('bg-black/90');
+          navbar.classList.add('bg-black/80');
+        }
+      });
+
+      const counters = document.querySelectorAll('.counter');
+      function animateCounter(counter) {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+          }
+        };
+        updateCounter();
+      }
+      const animatedCounters = new Set();
+      function checkCounters() {
+        counters.forEach((counter, index) => {
+          if (animatedCounters.has(index)) return;
+          const rect = counter.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
+            animateCounter(counter);
+            animatedCounters.add(index);
+          }
+        });
+      }
+      window.addEventListener('scroll', checkCounters);
+      window.addEventListener('load', () => {
+        setTimeout(checkCounters, 500);
+        setTimeout(retryFailedImages, 1500);
+      });
+
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.contains('hidden')
+          ? menu.classList.remove('hidden')
+          : menu.classList.add('hidden');
+      }
+      document.querySelectorAll('#mobile-menu a').forEach((link) => {
+        link.addEventListener('click', () =>
+          document.getElementById('mobile-menu').classList.add('hidden')
+        );
+      });
+
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document
+            .querySelectorAll('.image-reveal')
+            .forEach((img) => img.classList.add('active'));
+        }, 500);
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const successMsg = document.getElementById('formSuccess');
+      const errorMsg = document.getElementById('formError');
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        if (form.action.includes('TU_ID_DE_FORMSPREE_AQUI')) {
+          alert('⚠️ IMPORTANTE: Configura Formspree en el código HTML');
+          return;
+        }
+        submitBtn.classList.add('form-loading');
+        submitBtn.innerHTML = '<span class="relative z-10">Enviando...</span>';
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            submitBtn.classList.remove('form-loading');
+            submitBtn.innerHTML =
+              '<span class="relative z-10">Enviar Solicitud</span>';
+            if (response.ok) {
+              successMsg.style.display = 'block';
+              errorMsg.style.display = 'none';
+              form.reset();
+              setTimeout(() => {
+                successMsg.style.display = 'none';
+              }, 5000);
+            } else {
+              errorMsg.style.display = 'block';
+              successMsg.style.display = 'none';
+            }
+          })
+          .catch(() => {
+            submitBtn.classList.remove('form-loading');
+            submitBtn.innerHTML =
+              '<span class="relative z-10">Enviar Solicitud</span>';
+            errorMsg.style.display = 'block';
+            successMsg.style.display = 'none';
+          });
+      }
+      form.addEventListener('submit', handleSubmit);
+    </script>
+  </body>
+</html>
