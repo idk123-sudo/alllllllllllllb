@@ -14,11 +14,11 @@
     <title>Fitness Center Berja | Gimnasio en Berja, Almería - Entrenamiento Personal y Musculación</title>
     <meta
       name="description"
-      content="Fitness Center Berja: el gimnasio de referencia en Berja, Almería. Musculación, cardio, entrenamiento personal con Alberto Cabrera (atleta IFBB) y planes desde 5€/día. Sin matrícula ni permanencia. ¡Ven a conocernos!"
+      content="Fitness Center Berja: el gimnasio de referencia en Berja, Almería. Musculación, cardio, entrenamiento personal con Alberto Cabrera (atleta IFBB), suplementación deportiva con Berja Nutrition y planes desde 5€/día. Sin matrícula ni permanencia. ¡Ven a conocernos!"
     />
     <meta
       name="keywords"
-      content="gimnasio Berja, gimnasios en Berja, gimnasio Berja Almería, entrenamiento personal Berja, musculación Berja, Fitness Center Berja, entrenador personal Berja"
+      content="gimnasio Berja, gimnasios en Berja, gimnasio Berja Almería, entrenamiento personal Berja, musculación Berja, Fitness Center Berja, entrenador personal Berja, suplementos deportivos Berja, tienda de suplementación Almería, Berja Nutrition, proteína whey Berja, comprar creatina Almería"
     />
 
     <!-- Preconnect / DNS-Prefetch para mejorar velocidad de carga (Core Web Vitals) -->
@@ -39,7 +39,7 @@
     <meta property="og:type" content="business.business" />
     <meta property="og:site_name" content="Fitness Center Berja" />
     <meta property="og:title" content="Fitness Center Berja | Gimnasio en Berja, Almería - Entrenamiento Personal y Musculación" />
-    <meta property="og:description" content="El gimnasio de referencia en Berja, Almería. Musculación, cardio y entrenamiento personal con Alberto Cabrera, atleta IFBB. Sin matrícula ni permanencia." />
+    <meta property="og:description" content="El gimnasio de referencia en Berja, Almería. Musculación, cardio, entrenamiento personal con Alberto Cabrera, atleta IFBB, y suplementación deportiva con Berja Nutrition. Sin matrícula ni permanencia." />
     <meta property="og:image" content="https://lh3.googleusercontent.com/p/AF1QipPzrYkPBrjyGYy8MPq7TN3nZPew-d9vKNgpQ3r8=s680-w680-h510-rw" />
     <meta property="og:image:width" content="680" />
     <meta property="og:image:height" content="510" />
@@ -160,6 +160,17 @@
           "description": "Bono de 10 entradas sueltas al gimnasio.",
           "price": "40",
           "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Suplementación Deportiva - Berja Nutrition",
+          "description": "Proteínas, creatina, pre-entrenos y vitaminas de calidad premium, disponibles en tienda online.",
+          "url": "https://berjanutrition.com",
+          "seller": {
+            "@type": "Organization",
+            "name": "Berja Nutrition",
+            "url": "https://berjanutrition.com"
+          }
         }
       ],
       "aggregateRating": {
@@ -209,7 +220,8 @@
       ],
       "sameAs": [
         "https://www.instagram.com/fitnesscenterberja/",
-        "https://www.facebook.com/alberto.cabreragonzalez.7/"
+        "https://www.facebook.com/alberto.cabreragonzalez.7/",
+        "https://berjanutrition.com"
       ]
     }
     </script>
@@ -231,6 +243,12 @@
           "position": 2,
           "name": "Fitness Center Berja - Gimnasio en Berja, Almería",
           "item": "https://fitness-center-berja.vercel.app/#gimnasio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Suplementación Deportiva - Berja Nutrition",
+          "item": "https://fitness-center-berja.vercel.app/#suplementos"
         }
       ]
     }
@@ -337,6 +355,86 @@
       .btn-outline:hover {
         border-color: #ffffff;
         background-color: rgba(255, 255, 255, 0.1);
+      }
+      .btn-accent {
+        background-color: #2563eb;
+        color: #ffffff;
+        transition: all 0.35s ease;
+        box-shadow: 0 8px 24px -8px rgba(37, 99, 235, 0.6);
+      }
+      .btn-accent:hover {
+        background-color: #1e3a8a;
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -10px rgba(37, 99, 235, 0.7);
+      }
+      .supplement-card {
+        background: rgba(20, 20, 20, 0.5);
+        border: 1px solid rgba(37, 99, 235, 0.15);
+        transition: all 0.4s ease;
+      }
+      .supplement-card:hover {
+        border-color: rgba(37, 99, 235, 0.5);
+        background: rgba(30, 30, 30, 0.7);
+        transform: translateY(-5px);
+      }
+      .float-actions {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.5rem;
+        z-index: 9997;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+      }
+      .float-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.85rem 1.1rem;
+        border-radius: 999px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.6);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .float-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+      }
+      .float-btn-contact {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .float-btn-contact:hover {
+        background-color: #e5e7eb;
+      }
+      .float-btn-shop {
+        background-color: #2563eb;
+        color: #ffffff;
+      }
+      .float-btn-shop:hover {
+        background-color: #1e3a8a;
+      }
+      .float-btn span.float-label {
+        display: inline;
+      }
+      @media (max-width: 640px) {
+        .float-actions {
+          right: 1rem;
+          bottom: 1rem;
+          gap: 0.6rem;
+        }
+        .float-btn {
+          padding: 0.85rem;
+          border-radius: 50%;
+        }
+        .float-btn span.float-label {
+          display: none;
+        }
       }
       ::-webkit-scrollbar {
         width: 8px;
@@ -486,6 +584,11 @@
                 >Instalaciones</a
               >
               <a
+                href="#suplementos"
+                class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
+                >Suplementos</a
+              >
+              <a
                 href="#resenas"
                 class="hover:text-white text-gray-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide"
                 >Reseñas</a
@@ -532,6 +635,11 @@
             href="#gimnasio"
             class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
             >Instalaciones</a
+          >
+          <a
+            href="#suplementos"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase"
+            >Suplementos</a
           >
           <a
             href="#resenas"
@@ -1422,6 +1530,159 @@
       </div>
     </section>
 
+    <!-- Supplements Section -->
+    <section id="suplementos" class="py-24 bg-black relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 blur-3xl rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 blur-3xl rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <p class="text-blue-500 font-mono text-xs tracking-[0.3em] uppercase mb-3">
+            Nutrición Deportiva
+          </p>
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight"
+          >
+            Suplementación Premium
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto mt-6 leading-relaxed">
+            En Fitness Center Berja recomendamos
+            <strong class="text-white">Berja Nutrition</strong>, nuestra
+            tienda de suplementación deportiva de confianza. Fórmulas de
+            calidad para acompañar cada fase de tu entrenamiento, dentro y
+            fuera del gimnasio.
+          </p>
+          <div class="w-24 h-1 bg-blue-600 mx-auto mt-6"></div>
+        </div>
+
+        <!-- Category cards -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+          <div
+            class="supplement-card rounded-sm p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors"
+            >
+              <i data-lucide="dumbbell" class="w-6 h-6 text-blue-500"></i>
+            </div>
+            <h3
+              class="text-white font-display font-bold uppercase tracking-wide text-lg mb-2"
+            >
+              Proteínas
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Whey, isolate y vegetal para maximizar la recuperación
+              muscular.
+            </p>
+          </div>
+          <div
+            class="supplement-card rounded-sm p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors"
+            >
+              <i data-lucide="zap" class="w-6 h-6 text-blue-500"></i>
+            </div>
+            <h3
+              class="text-white font-display font-bold uppercase tracking-wide text-lg mb-2"
+            >
+              Creatina
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Fuerza, potencia y rendimiento en cada serie que entrenas.
+            </p>
+          </div>
+          <div
+            class="supplement-card rounded-sm p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors"
+            >
+              <i data-lucide="flame" class="w-6 h-6 text-blue-500"></i>
+            </div>
+            <h3
+              class="text-white font-display font-bold uppercase tracking-wide text-lg mb-2"
+            >
+              Pre-Entreno
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Energía y foco mental para entrenar al límite de tu capacidad.
+            </p>
+          </div>
+          <div
+            class="supplement-card rounded-sm p-6 text-center group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600/20 transition-colors"
+            >
+              <i data-lucide="heart-pulse" class="w-6 h-6 text-blue-500"></i>
+            </div>
+            <h3
+              class="text-white font-display font-bold uppercase tracking-wide text-lg mb-2"
+            >
+              Vitaminas y Salud
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Refuerza tus defensas y tu bienestar general día a día.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA panel -->
+        <div
+          class="border border-blue-600/20 bg-neutral-900/60 rounded-sm p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center"
+          data-aos="fade-up"
+        >
+          <div>
+            <h3
+              class="text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-tight mb-5"
+            >
+              Tu tienda de confianza, a un clic
+            </h3>
+            <ul class="space-y-3 text-gray-400 text-sm">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>
+                Envío rápido a toda España
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>
+                Marcas seleccionadas y controladas
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>
+                Avalada por Alberto Cabrera, atleta IFBB
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-start md:items-end gap-3">
+            <a
+              href="https://berjanutrition.com"
+              target="_blank"
+              rel="noopener"
+              class="btn-accent px-10 py-4 text-base font-bold uppercase tracking-widest inline-flex items-center justify-center gap-3 w-full md:w-auto"
+            >
+              Comprar en BerjaNutrition.com
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+            <p class="text-gray-600 text-xs uppercase tracking-wider">
+              berjanutrition.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Reviews Section -->
     <section id="resenas" class="py-24 bg-neutral-950 border-t border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1845,6 +2106,26 @@
         </div>
       </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="float-actions">
+      <a
+        href="#suplementos"
+        class="float-btn float-btn-shop"
+        aria-label="Comprar suplementación en Berja Nutrition"
+      >
+        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <span class="float-label">Suplementos</span>
+      </a>
+      <a
+        href="#contacto"
+        class="float-btn float-btn-contact"
+        aria-label="Ir al formulario de contacto"
+      >
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span class="float-label">Contactar</span>
+      </a>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
